@@ -1,29 +1,41 @@
 
-const Benzeno = _tasks => _callback => {
-  const  _k = Object.keys(_tasks)
-  const  _kf = _k.filter( _k => typeof(_tasks[_k]) === 'function' )
-  const _bond = Object.assign({
-      _results: {},
-      _count:  _kf.length
+const Benzeno = function benring(rings){
+  const  benkeys = Object.keys(rings)
+  const benfun = []
+  const  benotfun = []
+  benkeys.forEach( _k => {
+    if(typeof(rings[_k]) === 'function'){
+      benfun.push(_k)
+    }else{
+      benotfun.push(_k)
+    }
+  })
+
+  const bond = Object.assign({
+      ringout: {},
+      count:  benfun.length
     },
     Object.create(null)
   )
+  for( _i of benotfun){
+      bond.ringout[_i] = rings[_i]
+  }
 
-  const _kb = _k => _data => {
-    _bond._count -= 1
-    _bond._results[_k] = _data
-    if( _bond._count === 0){
-      _callback && _callback(_bond._results)
+  
+  return function benzoin(callback){
+
+    const _kb = function(_k){
+        return function benback(_data){
+          bond.count -= 1
+          bond.ringout[_k] = _data
+          if( bond.count === 0){
+            callback && callback(bond.ringout)
+          }
+        }
     }
+
+    benfun.forEach( function(_k){
+      rings[_k](_kb(_k))
+    })
   }
-
-  _kf.forEach( function(_k){
-    _tasks[_k](_kb(_k))
-  })
-
-  const  _knf = _k.filter( _k => typeof(_tasks[_k]) !== 'function' )
-  for( _i of _knf){
-      _bond._results[_i] = _tasks[_i]
-  }
-
 }
