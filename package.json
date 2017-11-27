@@ -1,0 +1,23 @@
+{
+  "name": "benzeno",
+  "version": "0.0.2",
+  "description": "yet another callback manager tool",
+  "main": "benzeno.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/degumes/benzeno.git"
+  },
+  "keywords": [
+    "async",
+    "parallel"
+  ],
+  "author": "itacir gabral",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/degumes/benzeno/issues"
+  },
+  "homepage": "https://github.com/degumes/benzeno#readme"
+}

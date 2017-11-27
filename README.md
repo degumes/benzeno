@@ -12,7 +12,7 @@ $ npm install benzeno --save
 ``` javascript
 const Benzeno = require('benzeno')
 
-var ring = {
+const ring = {
   ben100(cb){
     setTimeout(() => {
       cb( null ,`tout100 delay: ${Date.now()-this.t0}`)
@@ -31,7 +31,7 @@ var ring = {
   t0: Date.now()
 }
 
-var ben = Benzeno(ring)
+const ben = Benzeno(ring)
 ben( (err, r) => {
   console.dir(r)
 })
@@ -45,8 +45,14 @@ ben( (err, r) => {
 }
 */
 ```
-## usage minifed
+## usage minifed at browser
 ```html
 <!-- append at head -->
-<script src="https://raw.githubusercontent.com/degumes/benzeno/master/benzeno.min.js"></script>
+<script src="https://raw.githubusercontent.com/degumes/benzeno/master/benzeno.min.js">
+  // Global window.Benzeno
+  const ben = Benzeno(youring)
+  ben( (err, r) => {
+    console.dir(r)
+  })
+</script>
 ```
