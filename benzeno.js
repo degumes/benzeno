@@ -1,5 +1,4 @@
-
-const Benzeno = function benring(rings){
+module.exports = function benring(rings){
   const  benkeys = Object.keys(rings)
   const benfun = []
   const  benotfun = []
@@ -13,7 +12,8 @@ const Benzeno = function benring(rings){
 
   const bond = Object.assign({
       ringout: {},
-      count:  benfun.length
+      count:  benfun.length,
+      err: false
     },
     Object.create(null)
   )
@@ -21,15 +21,16 @@ const Benzeno = function benring(rings){
       bond.ringout[_i] = rings[_i]
   }
 
-  
+
   return function benzoin(callback){
 
     const _kb = function(_k){
-        return function benback(_data){
+        return function benback(...d){
           bond.count -= 1
-          bond.ringout[_k] = _data
+          bond.ringout[_k] = d
+          bond.err = !!d[0] || bond.err
           if( bond.count === 0){
-            callback && callback(bond.ringout)
+            callback && callback(bond.err, bond.ringout)
           }
         }
     }
