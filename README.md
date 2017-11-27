@@ -40,8 +40,8 @@ ben( (err, r) => {
 {
   t0: 1511800544979,
   benerr: [ 'its dizzy' ],
-  ben100: [ null, 'tout100 delay: 524' ],
-  ben300: [ null, 'tout300 delay: 724' ]
+  ben100: [ null, 'tout100 delay: 101' ],
+  ben300: [ null, 'tout300 delay: 301' ]
 }
 */
 ```
