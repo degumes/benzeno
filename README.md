@@ -48,7 +48,7 @@ ben( (err, r) => {
 ## usage minifed at browser
 ```html
 <!-- append at head -->
-<script src="https://raw.githubusercontent.com/degumes/benzeno/master/benzeno.min.js">
+<script src="https://cdn.jsdelivr.net/npm/benzeno/benzeno.min.js">
   // Global window.Benzeno
   const ben = Benzeno(youring)
   ben( (err, r) => {
