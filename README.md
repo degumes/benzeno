@@ -48,9 +48,10 @@ ben( (err, r) => {
 ## usage minifed at browser
 ```html
 <!-- append at head -->
-<script src="https://cdn.jsdelivr.net/npm/benzeno/benzeno.min.js">
+<script src="https://cdn.jsdelivr.net/npm/benzeno/benzeno.browser.min.js">
   // Global window.Benzeno
-  const ben = Benzeno(youring)
+  var ring = { nofunction: true }
+  var ben = Benzeno(ring)
   ben( (err, r) => {
     console.dir(r)
   })
