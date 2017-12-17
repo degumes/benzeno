@@ -23,20 +23,22 @@ module.exports = function benring(rings){
 
 
   return function benzoin(callback){
-
-    const _kb = function(_k){
-        return function benback(...d){
-          bond.count -= 1
-          bond.ringout[_k] = d
-          bond.err = !!d[0] || bond.err
-          if( bond.count === 0){
-            callback && callback(bond.err, bond.ringout)
+    if (bond.count === 0) {
+      callback && callback(bond.err, bond.ringout)
+    } else {
+      const _kb = function(_k){
+          return function benback(...d){
+            bond.count -= 1
+            bond.ringout[_k] = d
+            bond.err = !!d[0] || bond.err
+            if( bond.count === 0){
+              callback && callback(bond.err, bond.ringout)
+            }
           }
-        }
+      }
+      benfun.forEach( function(_k){
+        rings[_k](_kb(_k))
+      })
     }
-
-    benfun.forEach( function(_k){
-      rings[_k](_kb(_k))
-    })
   }
 }
