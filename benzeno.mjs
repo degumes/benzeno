@@ -1,4 +1,4 @@
-module.exports = function benring (rings) {
+const benring = function benring (rings) {
   const benkeys = Object.keys(rings)
   const benfun = []
   const benotfun = []
@@ -37,3 +37,5 @@ module.exports = function benring (rings) {
     })
   }
 }
+
+export default benring
