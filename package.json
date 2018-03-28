@@ -1,6 +1,6 @@
 {
   "name": "benzeno",
-  "version": "0.0.03",
+  "version": "0.0.4",
   "description": "yet another callback manager tool",
   "main": "benzeno.js",
   "scripts": {
