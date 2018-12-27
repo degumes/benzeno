@@ -1,4 +1,7 @@
 # benzeno
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/itacirgabral/benzeno.svg)](https://greenkeeper.io/)
+
 yet another async parallel tool. But declarative and recursive.
 
 [This code](https://gist.github.com/branneman/d3e3d98703aa6e31701a) help me to think
